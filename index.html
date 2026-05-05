@@ -12,40 +12,39 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
-      height: 100%;
-    }
     body {
       background: #000;
       color: #fff;
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      letter-spacing: 0.1em;
+      letter-spacing: .1em;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
     }
     nav {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      z-index: 50;
-      padding: 1rem;
+      width: 100%;
+      padding: 1rem 2rem;
+      z-index: 100;
     }
     nav ul {
       display: flex;
       justify-content: flex-end;
       list-style: none;
-      gap: 1.5rem;
+      gap: 2rem;
     }
     nav a {
       color: #fff;
       text-decoration: none;
       font-size: 0.875rem;
-      transition: color 0.3s;
+      opacity: 0.8;
+      transition: opacity 0.3s;
     }
     nav a:hover {
-      color: #9ca3af;
+      opacity: 0.4;
     }
     main {
       flex: 1;
@@ -57,53 +56,56 @@
     }
     .hero {
       text-align: center;
+      padding: 4rem 0;
     }
     .hero h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
     }
-    .hero p {
+    .hero .subtitle {
       font-size: 1.25rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
-    .hero p:nth-child(2) {
-      font-size: 1.5rem;
-    }
-    .hero p:nth-child(3) {
-      color: #9ca3af;
+    .hero .desc {
+      color: #999;
       margin-bottom: 2rem;
     }
     .hero .contact-link {
       color: #22c55e;
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
     .hero .contact-link:hover {
       color: #4ade80;
     }
-    .btn {
+    .hero .btn {
       display: inline-block;
       border: 1px solid #fff;
-      padding: 0.75rem 2rem;
+      padding: 0.875rem 3rem;
       color: #fff;
       text-decoration: none;
+      font-size: 0.875rem;
       transition: all 0.3s;
+      margin-top: 0.5rem;
     }
-    .btn:hover {
+    .hero .btn:hover {
       background: #fff;
       color: #000;
     }
-    .footer-text {
-      position: fixed;
-      bottom: 1rem;
+    .footer {
+      position: absolute;
+      bottom: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
-      color: #6b7280;
-      font-size: 0.875rem;
+      color: #555;
+      font-size: 0.75rem;
     }
-    @media (min-width: 768px) {
+    @media (max-width: 640px) {
       .hero h1 {
-        font-size: 6rem;
+        font-size: 3rem;
       }
     }
   </style>
@@ -120,14 +122,13 @@
   <main>
     <div class="hero">
       <h1>Hi</h1>
-      <p>I'm Lilp</p>
-      <p>I'm a frontend developer from Taiwan.</p>
+      <p class="subtitle">I'm Lilp</p>
+      <p class="desc">I'm a frontend developer from Taiwan.</p>
       <p>If you like my work. Please <a href="lilp.html" class="contact-link">CONTACT ME !!!</a></p>
-      <br>
       <a href="work.html" class="btn">See My Work</a>
     </div>
   </main>
 
-  <p class="footer-text">Want to play something here...</p>
+  <p class="footer">Want to play something here...</p>
 </body>
 </html>
