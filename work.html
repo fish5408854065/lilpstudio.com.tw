@@ -1,31 +1,244 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio - Lilp</title>
-<meta name="description" content="前端工程師 / 音樂打擊 / BBOY / 不稱職玩家 Lilp,音同Leo,p不發音,一個我發明的字,以前一起跳舞的朋友幫我取綽號&quot;啦p&quot;想當然英文也取個符合氣質&quot;Lilp&quot;,我很喜歡這個名字。">
-<meta name="format-detection" content="telephone=no">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta property="og:title" content="Portfolio - Lilp">
-<meta property="og:description" content="前端工程師 / 音樂打擊 / BBOY / 不稱職玩家 Lilp,音同Leo,p不發音,一個我發明的字,以前一起跳舞的朋友幫我取綽號&quot;啦p&quot;想當然英文也取個符合氣質&quot;Lilp&quot;,我很喜歡這個名字。">
-<meta property="og:image" content="https://www.lilpstudio.com.tw/cc8.png">
-<meta property="og:site_name" content="Lilp-啦p">
-<meta property="og:locale" content="zh_TW">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="_nuxt/entry.Cd1RCH-N.css">
-<link rel="modulepreload" as="script" crossorigin href="_nuxt/entry.DDUbGvNy.js">
-<link rel="prefetch" as="script" crossorigin href="_nuxt/scroll-behavior.2bAM6GlW.js">
-<link rel="prefetch" as="style" href="_nuxt/default.B92PWyFM.css">
-<link rel="prefetch" as="script" crossorigin href="_nuxt/default.-mvfacqK.js">
-<link rel="prefetch" as="script" crossorigin href="_nuxt/index.CPOyQ4ce.js">
-<link rel="prefetch" as="script" crossorigin href="_nuxt/nuxt-link.By4CROk9.js">
-<link rel="prefetch" as="style" href="_nuxt/error-404.CA6XZ6nY.css">
-<link rel="prefetch" as="script" crossorigin href="_nuxt/error-404.DZ0GzsYx.js">
-<link rel="prefetch" as="script" crossorigin href="_nuxt/vue.f36acd1f.BClkQgC1.js">
-<link rel="prefetch" as="style" href="_nuxt/error-500.DPwYA3kH.css">
-<link rel="prefetch" as="script" crossorigin href="_nuxt/error-500.Dhmh3kaK.js">
-<script type="module" src="_nuxt/entry.DDUbGvNy.js" crossorigin></script>
-<script id="unhead:payload" type="application/json">{"title":"Portfolio - Lilp"}</script></head>
-<body><div id="__nuxt"></div>
-<script>window.__NUXT__={};window.__NUXT__.config={public:{PUBLIC_JWT:"secret-in-lilp-website",BACKEND_URL:"https://lilp-website-backend.onrender.com"},app:{baseURL:"/",buildAssetsDir:"/_nuxt/",cdnURL:"https://www.lilpstudio.com.tw"}}</script></body></html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - Lilp</title>
+  <meta name="description" content="前端工程師 / 音樂打擊 / BBOY / 不稱職玩家 Lilp,音同Leo,p不發音,一個我發明的字,以前一起跳舞的朋友幫我取綽號&quot;啦p&quot;想當然英文也取個符合氣質&quot;Lilp&quot;,我很喜歡這個名字。">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0.1em;
+      min-height: 100vh;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 1rem;
+    }
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #9ca3af;
+    }
+    main {
+      padding: 6rem 2rem 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 6rem;
+      }
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .projects {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .project {
+      border: 1px solid #6b7280;
+      text-decoration: none;
+      color: #fff;
+      transition: border-color 0.3s;
+      display: block;
+    }
+    .project:hover {
+      border-color: #fff;
+    }
+    .project-img {
+      aspect-ratio: 16/9;
+      background: #1f2937;
+      overflow: hidden;
+    }
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+    .project:hover .project-img img {
+      opacity: 1;
+    }
+    .project-info {
+      padding: 1rem;
+    }
+    .project-info h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .project-info p {
+      color: #9ca3af;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tags span {
+      border: 1px solid #6b7280;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #6b7280;
+      font-size: 0.875rem;
+      border-top: 1px solid #374151;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lilp.html">Contact</a></li>
+      <li><a href="work.html">Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Portfolio</h1>
+    <div class="projects">
+      <a href="https://nightwave1115.github.io/weather_api" target="_blank" class="project">
+        <div class="project-img">
+          <img src="https://picsum.photos/seed/weather/600/400" alt="Weather App">
+        </div>
+        <div class="project-info">
+          <h3>Weather</h3>
+          <p>Weather App with 36hr weather forcast</p>
+          <div class="tags">
+            <span>React</span>
+            <span>API</span>
+            <span>CSS</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://nightwave1115.github.io/rpg-game" target="_blank" class="project">
+        <div class="project-img">
+          <img src="https://picsum.photos/seed/rpg/600/400" alt="RPG Game">
+        </div>
+        <div class="project-info">
+          <h3>RPG</h3>
+          <p>RPG Game with character attributes and battle system</p>
+          <div class="tags">
+            <span>JavaScript</span>
+            <span>CSS</span>
+            <span>Game</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://nightwave1115.github.io/todo-app" target="_blank" class="project">
+        <div class="project-img">
+          <img src="https://picsum.photos/seed/todo/600/400" alt="Todo App">
+        </div>
+        <div class="project-info">
+          <h3>Todo</h3>
+          <p>Simple Todo List App with local storage</p>
+          <div class="tags">
+            <span>Vue</span>
+            <span>LocalStorage</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://nightwave1115.github.io/blog" target="_blank" class="project">
+        <div class="project-img">
+          <img src="https://picsum.photos/seed/blog/600/400" alt="Blog">
+        </div>
+        <div class="project-info">
+          <h3>Blog</h3>
+          <p>Personal blog with article management</p>
+          <div class="tags">
+            <span>Vue</span>
+            <span>Node.js</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://nightwave1115.github.io/dance" target="_blank" class="project">
+        <div class="project-img">
+          <img src="https://picsum.photos/seed/dance/600/400" alt="Dance">
+        </div>
+        <div class="project-info">
+          <h3>街舞</h3>
+          <p>Street dance culture and move tutorials</p>
+          <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Animation</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://nightwave1115.github.io/music" target="_blank" class="project">
+        <div class="project-img">
+          <img src="https://picsum.photos/seed/music/600/400" alt="Music">
+        </div>
+        <div class="project-info">
+          <h3>線上音樂</h3>
+          <p>Online music player with playlist</p>
+          <div class="tags">
+            <span>JavaScript</span>
+            <span>Audio API</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Lilp. All rights reserved.</p>
+  </footer>
+</body>
+</html>

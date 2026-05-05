@@ -1,1 +1,0 @@
-import{N as e}from"./entry.DDUbGvNy.js";const a=e("common",{state:()=>({triangleState:"normal",entryPath:"/",movement:{x:null,y:null},scrollFloat:0}),actions:{setTriangleState(t){this.triangleState=t},setEntryPath(t){this.entryPath=t},setMovement(t){this.movement=t},setScrollFloat(t){this.scrollFloat=t}},getters:{}});export{a as u};
