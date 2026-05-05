@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lilp-啦p</title>
+  <meta name="description" content="前端工程師 / 音樂打擊 / BBOY / 不稱職玩家 Lilp,音同Leo,p不發音,一個我發明的字,以前一起跳舞的朋友幫我取綽號&quot;啦p&quot;想當然英文也取個符合氣質&quot;Lilp&quot;,我很喜歡這個名字。">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      letter-spacing: .1em;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+    .text-truncate-2 {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      height: 48px;
+    }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-30 backdrop-blur">
+    <div class="container mx-auto px-4 py-4 flex justify-center md:justify-end">
+      <div class="flex gap-6 text-sm md:text-base">
+        <a href="/index.html" class="hover:text-gray-400 transition-colors duration-300">Home</a>
+        <a href="/lilp.html" class="hover:text-gray-400 transition-colors duration-300">Contact</a>
+        <a href="/work.html" class="hover:text-gray-400 transition-colors duration-300">Portfolio</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Page -->
+  <main class="min-h-screen pt-24 pb-12 px-4">
+    <div class="container mx-auto max-w-screen-lg">
+      <div class="flex flex-col lg:flex-row gap-12 items-start justify-center">
+        
+        <!-- Left: Contact Info -->
+        <div class="flex-1">
+          <h1 class="text-5xl md:text-8xl font-bold mb-8">Contact</h1>
+          <div class="space-y-6 text-lg">
+            <div>
+              <h3 class="text-gray-400 text-sm mb-1">MAIL</h3>
+              <p>q884884@gmail.com</p>
+            </div>
+            <div>
+              <h3 class="text-gray-400 text-sm mb-1">GITHUB</h3>
+              <a href="https://github.com/nightwave1115" target="_blank" class="text-blue-600 hover:text-blue-400">github.com/nightwave1115</a>
+            </div>
+            <div>
+              <h3 class="text-gray-400 text-sm mb-1">DISCORD</h3>
+              <p>Lilp#5510</p>
+            </div>
+            <div>
+              <h3 class="text-gray-400 text-sm mb-1">WORK</h3>
+              <p>目前正再找尋網頁設計相關工作機會</p>
+              <p class="text-sm text-gray-400">Currently looking for web design related job opportunities</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="flex-1 w-full max-w-md">
+          <h2 class="text-2xl mb-6">Send Message</h2>
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <input type="text" name="name" placeholder="Your Name" required
+                class="w-full bg-transparent border border-gray-400 px-4 py-3 focus:border-white focus:outline-none transition-colors">
+            </div>
+            <div>
+              <input type="email" name="email" placeholder="Your Email" required
+                class="w-full bg-transparent border border-gray-400 px-4 py-3 focus:border-white focus:outline-none transition-colors">
+            </div>
+            <div>
+              <textarea name="message" placeholder="Your Message" rows="5" required
+                class="w-full bg-transparent border border-gray-400 px-4 py-3 focus:border-white focus:outline-none transition-colors resize-none"></textarea>
+            </div>
+            <button type="submit" 
+              class="w-full bg-white text-black font-bold py-3 hover:bg-gray-200 transition-colors duration-300">
+              SEND
+            </button>
+          </form>
+          <p id="form-status" class="mt-4 text-center hidden"></p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = 'Sending...';
+      status.className = 'mt-4 text-center text-yellow-500';
+      status.classList.remove('hidden');
+      
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      try {
+        const res = await fetch('https://lilp-website-backend.onrender.com/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        
+        if (res.ok) {
+          status.textContent = 'Message sent successfully!';
+          status.className = 'mt-4 text-center text-green-600';
+          form.reset();
+        } else {
+          throw new Error('Failed to send');
+        }
+      } catch (err) {
+        status.textContent = 'Failed to send message. Please try again.';
+        status.className = 'mt-4 text-center text-red-500';
+      }
+      
+      setTimeout(() => status.classList.add('hidden'), 5000);
+    });
+  </script>
+</body>
+</html>

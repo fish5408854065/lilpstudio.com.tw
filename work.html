@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - Lilp</title>
+  <meta name="description" content="前端工程師 / 音樂打擊 / BBOY / 不稱職玩家 Lilp,音同Leo,p不發音,一個我發明的字,以前一起跳舞的朋友幫我取綽號&quot;啦p&quot;想當然英文也取個符合氣質&quot;Lilp&quot;,我很喜歡這個名字。">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      letter-spacing: .1em;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+    .text-truncate-2 {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      height: 48px;
+    }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-30 backdrop-blur">
+    <div class="container mx-auto px-4 py-4 flex justify-center md:justify-end">
+      <div class="flex gap-6 text-sm md:text-base">
+        <a href="/index.html" class="hover:text-gray-400 transition-colors duration-300">Home</a>
+        <a href="/lilp.html" class="hover:text-gray-400 transition-colors duration-300">Contact</a>
+        <a href="/work.html" class="hover:text-gray-400 transition-colors duration-300">Portfolio</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portfolio Page -->
+  <main class="min-h-screen pt-24 pb-12 px-4">
+    <div class="container mx-auto max-w-screen-xl">
+      <h1 class="text-5xl md:text-8xl font-bold mb-12 text-center">Portfolio</h1>
+      
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1: Weather -->
+        <a href="https://nightwave1115.github.io/weather_api" target="_blank" 
+          class="group block border border-gray-400 hover:border-white transition-all duration-300">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <img src="https://picsum.photos/seed/weather/600/400" alt="Weather App" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Weather</h3>
+            <p class="text-gray-400 text-sm text-truncate-2">Weather App with 36hr weather forcast</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 border border-gray-600">React</span>
+              <span class="text-xs px-2 py-1 border border-gray-600">API</span>
+              <span class="text-xs px-2 py-1 border border-gray-600">CSS</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 2: RPG -->
+        <a href="https://nightwave1115.github.io/rpg-game" target="_blank" 
+          class="group block border border-gray-400 hover:border-white transition-all duration-300">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <img src="https://picsum.photos/seed/rpg/600/400" alt="RPG Game" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">RPG</h3>
+            <p class="text-gray-400 text-sm text-truncate-2">RPG Game with character attributes and battle system</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 border border-gray-600">JavaScript</span>
+              <span class="text-xs px-2 py-1 border border-gray-600">CSS</span>
+              <span class="text-xs px-2 py-1 border border-gray-600">Game</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 3: Todo -->
+        <a href="https://nightwave1115.github.io/todo-app" target="_blank" 
+          class="group block border border-gray-400 hover:border-white transition-all duration-300">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <img src="https://picsum.photos/seed/todo/600/400" alt="Todo App" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Todo</h3>
+            <p class="text-gray-400 text-sm text-truncate-2">Simple Todo List App with local storage</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 border border-gray-600">Vue</span>
+              <span class="text-xs px-2 py-1 border border-gray-600">LocalStorage</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 4: Blog -->
+        <a href="https://nightwave1115.github.io/blog" target="_blank" 
+          class="group block border border-gray-400 hover:border-white transition-all duration-300">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <img src="https://picsum.photos/seed/blog/600/400" alt="Blog" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Blog</h3>
+            <p class="text-gray-400 text-sm text-truncate-2">Personal blog with article management</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 border border-gray-600">Vue</span>
+              <span class="text-xs px-2 py-1 border border-gray-600">Node.js</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 5: 街舞 -->
+        <a href="https://nightwave1115.github.io/dance" target="_blank" 
+          class="group block border border-gray-400 hover:border-white transition-all duration-300">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <img src="https://picsum.photos/seed/dance/600/400" alt="Dance" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">街舞</h3>
+            <p class="text-gray-400 text-sm text-truncate-2">Street dance culture and move tutorials</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 border border-gray-600">HTML</span>
+              <span class="text-xs px-2 py-1 border border-gray-600">CSS</span>
+              <span class="text-xs px-2 py-1 border border-gray-600">Animation</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 6: 線上音樂 -->
+        <a href="https://nightwave1115.github.io/music" target="_blank" 
+          class="group block border border-gray-400 hover:border-white transition-all duration-300">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <img src="https://picsum.photos/seed/music/600/400" alt="Music" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">線上音樂</h3>
+            <p class="text-gray-400 text-sm text-truncate-2">Online music player with playlist</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 border border-gray-600">JavaScript</span>
+              <span class="text-xs px-2 py-1 border border-gray-600">Audio API</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-gray-600 text-sm border-t border-gray-800">
+    <p>© 2024 Lilp. All rights reserved.</p>
+  </footer>
+</body>
+</html>
